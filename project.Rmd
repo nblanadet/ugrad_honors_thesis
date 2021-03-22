@@ -1,0 +1,59 @@
+---
+title: "project_markdown"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+install.packages(c("tm", 
+                   "httr", 
+                   "purrr", 
+                   "jsonlite", 
+                   "tmap", 
+                   "raster", 
+                   "tidyverse", 
+                   "sf", 
+                   "rgbif", 
+                   "sp", 
+                   "ggthemes", 
+                   "png", 
+                   "readx1"))
+
+library("tm")
+library("httr")
+library("purrr")
+library("jsonlite")
+library("tmap")
+library("raster")
+library("tidyverse")
+library("sf")
+library("rgbif")
+library("sp")
+library("ggthemes")
+library("png")
+library("readxl")
+library("ggpubr")
+```
+
+```{r}
+watershed <- st_read("GISLayers/PWD_BASE_Env_Hydro_RR_tributaries.shp")
+roads <- st_read("GISLayers/PWD_BASE_Infstr_Roads.shp")
+boundaries <- st_read("GISLayers/PWD_BASE_Jursd_Boundaries_PepperwoodPreserve.shp")
+kincade <- st_read("GISLayers/PWD_KincadeFire_fullPerimeter.shp")
+tubbs <- st_read("GISLayers/Tubbs.shp")
+```
+
+```{r}
+tm_shape(boundaries) +
+  tm_borders(col = "green") +
+tm_shape(roads) +
+  tm_lines(col = "black", lwd = 5, alpha = 1) +
+tm_shape(kincade) +
+  tm_polygons(col = "red") +
+tm_shape(tubbs) +
+  tm_polygons(col = "orange")
+```
+
