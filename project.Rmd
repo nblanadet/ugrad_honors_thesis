@@ -8,19 +8,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-install.packages(c("tm", 
-                   "httr", 
-                   "purrr", 
-                   "jsonlite", 
-                   "tmap", 
-                   "raster", 
-                   "tidyverse", 
-                   "sf", 
-                   "rgbif", 
-                   "sp", 
-                   "ggthemes", 
-                   "png", 
-                   "readx1"))
+# install.packages(c("tm",
+#                    "httr",
+#                    "purrr",
+#                    "jsonlite",
+#                    "tmap",
+#                    "raster",
+#                    "tidyverse",
+#                    "sf",
+#                    "rgbif",
+#                    "sp",
+#                    "ggthemes",
+#                    "png",
+#                    "readx1"))
 
 library("tm")
 library("httr")
